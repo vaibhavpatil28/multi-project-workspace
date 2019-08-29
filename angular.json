@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/starter-app",
+            "outputPath": "dist/browser",
             "index": "projects/starter-app/src/index.html",
             "main": "projects/starter-app/src/main.ts",
             "polyfills": "projects/starter-app/src/polyfills.ts",
@@ -122,6 +122,29 @@
               "devServerTarget": "starter-app:serve:production"
             }
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/server",
+            "main": "projects/starter-app/src/main.server.ts",
+            "tsConfig": "projects/starter-app/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/starter-app/src/environments/environment.ts",
+                  "with": "projects/starter-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
+            }
+          }
         }
       }
     },
@@ -139,7 +162,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/primary-app",
+            "outputPath": "dist/browser",
             "index": "projects/primary-app/src/index.html",
             "main": "projects/primary-app/src/main.ts",
             "polyfills": "projects/primary-app/src/polyfills.ts",
@@ -244,8 +267,31 @@
               "devServerTarget": "primary-app:serve:production"
             }
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/server",
+            "main": "projects/primary-app/src/main.server.ts",
+            "tsConfig": "projects/primary-app/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/primary-app/src/environments/environment.ts",
+                  "with": "projects/primary-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
+            }
+          }
         }
       }
     }},
-  "defaultProject": "starter-app"
+  "defaultProject": "primary-app"
 }
