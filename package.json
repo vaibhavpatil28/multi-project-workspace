@@ -8,8 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
+
+    "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:client-and-server-bundles": "ng build --prod && ng run primary-app:server:production --bundleDependencies all",
 
@@ -19,7 +20,10 @@
 
     "compile-primary-app:server": "webpack --config webpack.primary-app-server.config.js --progress --colors",
     "build-primary-app:ssr": "npm run build-primary-app:client-and-server-bundles && npm run compile-primary-app:server",
-    "build-primary-app:client-and-server-bundles": "ng build primary-app --prod && ng run primary-app:server:production --bundleDependencies all"
+    "build-primary-app:client-and-server-bundles": "ng build primary-app --prod && ng run primary-app:server:production --bundleDependencies all",
+
+    "build-all:ssr": "npm run build-primary-app:client-and-server-bundles && npm run build-starter-app:ssr"
+
   },
   "private": true,
   "dependencies": {
