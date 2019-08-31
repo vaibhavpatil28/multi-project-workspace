@@ -34,12 +34,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/starter-app/src/environments/environment.ts",
-                  "with": "projects/starter-app/src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "projects/starter-app/src/environments/environment.ts",
+                "with": "projects/starter-app/src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -49,8 +47,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
+              "budgets": [{
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
@@ -132,12 +129,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/starter-app/src/environments/environment.ts",
-                  "with": "projects/starter-app/src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "projects/starter-app/src/environments/environment.ts",
+                "with": "projects/starter-app/src/environments/environment.prod.ts"
+              }],
               "sourceMap": false,
               "optimization": {
                 "scripts": false,
@@ -162,7 +157,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/browser",
+            "outputPath": "dist/primary-app/browser",
             "index": "projects/primary-app/src/index.html",
             "main": "projects/primary-app/src/main.ts",
             "polyfills": "projects/primary-app/src/polyfills.ts",
@@ -179,12 +174,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/primary-app/src/environments/environment.ts",
-                  "with": "projects/primary-app/src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "projects/primary-app/src/environments/environment.ts",
+                "with": "projects/primary-app/src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -194,8 +187,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
+              "budgets": [{
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
@@ -271,18 +263,16 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/server",
+            "outputPath": "dist/primary-app/server",
             "main": "projects/primary-app/src/main.server.ts",
             "tsConfig": "projects/primary-app/tsconfig.server.json"
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/primary-app/src/environments/environment.ts",
-                  "with": "projects/primary-app/src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "projects/primary-app/src/environments/environment.ts",
+                "with": "projects/primary-app/src/environments/environment.prod.ts"
+              }],
               "sourceMap": false,
               "optimization": {
                 "scripts": false,
@@ -292,6 +282,7 @@
           }
         }
       }
-    }},
-  "defaultProject": "primary-app"
+    }
+  },
+  "defaultProject": "starter-app"
 }

@@ -10,12 +10,16 @@
     "e2e": "ng e2e",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
-    "build-starter-app:ssr": "npm run build-starter-app:client-and-server-bundles && npm run compile:server",
-    "build-starter-app:client-and-server-bundles": "ng build starter-app --prod && ng run starter-app:server:production --bundleDependencies all",
-    "build-primary-app:ssr": "npm run build-primary-app:client-and-server-bundles && npm run compile:server",
-    "build-primary-app:client-and-server-bundles": "ng build primary-app --prod && ng run primary-app:server:production --bundleDependencies all",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build --prod && ng run primary-app:server:production --bundleDependencies all"
+    "build:client-and-server-bundles": "ng build --prod && ng run primary-app:server:production --bundleDependencies all",
+
+    "compile-starter-app:server": "webpack --config webpack.server.config.js --progress --colors",
+    "build-starter-app:ssr": "npm run build-starter-app:client-and-server-bundles && npm run compile-starter-app:server",
+    "build-starter-app:client-and-server-bundles": "ng build starter-app --prod && ng run starter-app:server:production --bundleDependencies all",
+
+    "compile-primary-app:server": "webpack --config webpack.primary-app-server.config.js --progress --colors",
+    "build-primary-app:ssr": "npm run build-primary-app:client-and-server-bundles && npm run compile-primary-app:server",
+    "build-primary-app:client-and-server-bundles": "ng build primary-app --prod && ng run primary-app:server:production --bundleDependencies all"
   },
   "private": true,
   "dependencies": {
